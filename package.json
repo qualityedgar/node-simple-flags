@@ -1,0 +1,28 @@
+{
+  "name": "simple-flags",
+  "version": "1.0.0",
+  "description": "Simple and practical module to generate and organize command line flags",
+  "main": "lib/simpleFlags.js",
+  "scripts": {
+    "test": "node test.js 'Philippe Assis' ${HOME} --site www.philippeassis.com --github=https://github.com/PhilippeAssis -d --coffee -not -c 'Brazil=Fora Temer'"
+  },
+  "keywords": [
+    "flags",
+    "flag",
+    "cli",
+    "args",
+    "arguments",
+    "opt",
+    "opts"
+  ],
+  "author": "Philippe Assis <assis@philippeassi.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilippeAssis/node-simple-flags.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PhilippeAssis/node-simple-flags/issues"
+  },
+  "homepage": "https://github.com/PhilippeAssis/node-simple-flags#readme"
+}
