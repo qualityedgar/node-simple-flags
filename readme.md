@@ -6,9 +6,9 @@ The aim of this module is to facilitate the capture and manulação of badeiras 
 `npm install --save simple-args`
 
 ## Test
-In node_modules/simple-args, run:
+In node_modules/simple-args, run: `npm run test`
 
-`npm run test`
+## Features
 
 #### option.args
 Get the names of the arguments that are not pre-defined, ie its definition is from your order.
