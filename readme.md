@@ -31,7 +31,7 @@ var options = {
     "not": true,
     "developer": ['d', 'dev'],
     "country": {
-        short: 'c',
+        alias: 'c',
         value: "Do not be 'reaça'"
     }
 }
