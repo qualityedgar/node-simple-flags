@@ -44,7 +44,6 @@ console.log(flags(options))
 node test.js 'Philippe Assis' ${HOME} --site www.philippeassis.com --github=https://github.com/PhilippeAssis -d --coffee -not -c 'Brazil=#foraTemer'
 ```
 
-
 ### Result
 ```javascript
 { coffee: true,

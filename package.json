@@ -1,10 +1,11 @@
 {
   "name": "simple-flags",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Simple and practical module to generate and organize command line flags",
-  "main": "lib/simpleFlags.js",
+  "main": "index.js",
   "scripts": {
-    "test": "node test.js 'Philippe Assis' ${HOME} --site www.philippeassis.com --github=https://github.com/PhilippeAssis -d --coffee -not -c 'Brazil=Fora Temer'"
+    "test": "node test.js 'Philippe Assis' ${HOME} --site www.philippeassis.com --github=https://github.com/PhilippeAssis -d --coffee -not -c 'Brazil=Fora Temer'",
+    "help": "node test.js -h"
   },
   "keywords": [
     "flags",
@@ -32,5 +33,8 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "colors": "^1.1.2"
   }
 }

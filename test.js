@@ -3,12 +3,22 @@ var flags = require('./lib/simpleFlags')
 // Default options
 var options = {
   'args': ['author', 'website'],
-  'coffee': false,
-  'not': true,
-  'developer': null,
+  'coffee': {
+    default: false,
+    description: 'You have coffee?'
+  },
+  'not': {
+    default: true,
+    description: 'Boolean example'
+  },
+  'developer': {
+    aliases: ['dev', 'd'],
+    description: 'Developer name'
+  },
   'country': {
     aliases: ['c'],
-    default: "Do not be 'reaça'"
+    default: 'Do not be \'reaça\'',
+    description: 'Your country'
   }
 }
 
