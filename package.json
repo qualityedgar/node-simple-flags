@@ -2,7 +2,7 @@
   "name": "simple-flags",
   "version": "1.2.0",
   "description": "Simple and practical module to generate and organize command line flags",
-  "main": "index.js",
+  "main": "lib/simpleFlags.js",
   "scripts": {
     "test": "node test.js 'Philippe Assis' ${HOME} --site www.philippeassis.com --github=https://github.com/PhilippeAssis -d --coffee -not -c 'Brazil=Fora Temer'",
     "help": "node test.js -h"
