@@ -29,7 +29,7 @@ var options = {
     "args": ["author", "website"],
     "coffee": false,
     "not": true,
-    "developer": ['d', 'dev'],
+    "developer": null,
     "country": {
         aliases: ['c', 'country'],
         default: "Do not be 'reaça'"
@@ -57,7 +57,7 @@ node test.js 'Philippe Assis' ${HOME} --site www.philippeassis.com --github=http
   website: '/home/assis' }
   ```
 
-  ## Deprecation's
+  ## Deprecation'
   ### alias to aliases
   The `alias` priority will be replaced for `aliases` in the future, necessarily passing an array
 
