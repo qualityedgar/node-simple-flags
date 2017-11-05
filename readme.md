@@ -31,18 +31,17 @@ var options = {
     "not": true,
     "developer": ['d', 'dev'],
     "country": {
-        alias: 'c',
-        value: "Do not be 'reaça'"
+        aliases: ['c', 'country'],
+        default: "Do not be 'reaça'"
     }
 }
 
 console.log(flags(options))
-
 ```
 
 ### Command
 ```shell
-node test.js 'Philippe Assis' ${HOME} --site www.philippeassis.com --github=https://github.com/PhilippeAssis -d --coffee -not -c 'Brazil=Fora Temer'
+node test.js 'Philippe Assis' ${HOME} --site www.philippeassis.com --github=https://github.com/PhilippeAssis -d --coffee -not -c 'Brazil=#foraTemer'
 ```
 
 
@@ -57,3 +56,21 @@ node test.js 'Philippe Assis' ${HOME} --site www.philippeassis.com --github=http
   author: 'Philippe Assis',
   website: '/home/assis' }
   ```
+
+  ## Deprecation's
+  ### alias to aliases
+  The `alias` priority will be replaced for `aliases` in the future, necessarily passing an array
+
+```javascript
+"country": {
+    aliases: ['c', 'country']
+}
+```
+### value to default
+The `value` priority will be replaced for `default` in the future
+
+```javascript
+"country": {
+    default: "#foraTemer"
+}
+```
