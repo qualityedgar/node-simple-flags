@@ -1,6 +1,6 @@
 {
   "name": "simple-flags",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Simple and practical module to generate and organize command line flags",
   "main": "lib/simpleFlags.js",
   "scripts": {
