@@ -1,10 +1,10 @@
 {
-  "name": "simple-flags",
-  "version": "1.2.4",
-  "description": "Simple and practical module to generate and organize command line flags",
+  "name": "@quality-edgar/simple-flags",
+  "version": "2.0.0",
+  "description": "Simple and practical module to generate and organize command line flags and display usage",
   "main": "lib/simpleFlags.js",
   "scripts": {
-    "test": "node test.js 'Philippe Assis' ${HOME} --site www.philippeassis.com --github=https://github.com/PhilippeAssis -d --coffee -not -c 'Brazil=Fora Temer'",
+    "test": "node test.js 'Quality EDGAR' ${HOME} --site www.qualityedgarsolutions.com --github=https://github.com/qualityedgar -d --coffee -not -c 'USA=QES'",
     "help": "node test.js -h"
   },
   "keywords": [
@@ -16,24 +16,16 @@
     "opt",
     "opts"
   ],
-  "author": "Philippe Assis <assis@philippeassi.com>",
+  "author": "Sundeep Narang <sundeepnrng@gmail.com>",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PhilippeAssis/node-simple-flags.git"
+    "url": "git+https://github.com/qualityedgar/node-simple-flags"
   },
   "bugs": {
-    "url": "https://github.com/PhilippeAssis/node-simple-flags/issues"
+    "url": "https://github.com/qualityedgar/node-simple-flags/issues"
   },
-  "homepage": "https://github.com/PhilippeAssis/node-simple-flags#readme",
-  "devDependencies": {
-    "eslint": "^4.10.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1"
-  },
+  "homepage": "https://github.com/qualityedgar/node-simple-flags#readme",
   "dependencies": {
     "colors": "^1.1.2"
   }

@@ -2,23 +2,30 @@ var flags = require('./lib/simpleFlags')
 
 // Default options
 var options = {
+  'helpHeader' : "Usage Guide : \n",
   'args': ['author', 'website'],
-  'coffee': {
-    default: false,
-    description: 'You have coffee?'
-  },
-  'not': {
-    default: true,
-    description: 'Boolean example'
-  },
-  'developer': {
-    aliases: ['dev', 'd'],
-    description: 'Developer name'
-  },
-  'country': {
-    aliases: ['c'],
-    default: 'Do not be \'reaça\'',
-    description: 'Your country'
+  'name' : 'Program Name',
+  'description' : 'Program Description',
+  'synopsis' : ["prog --coffee --not","prog --developer='Sundeep Narang'"],
+  'flags' : {
+    'coffee': {
+      default: false,
+      description: 'You have coffee?'
+    },
+    'not': {
+      default: true,
+      description: 'Boolean example'
+    },
+    'developer': {
+      aliases: ['dev', 'd'],
+      description: 'Developer name'
+    },
+    'country': {
+      aliases: ['c'],
+      default: 'Do not be \'reaça\'',
+      description: 'Your country'
+    },
+    'directFlag' : "test"
   }
 }
 

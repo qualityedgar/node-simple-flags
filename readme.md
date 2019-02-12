@@ -1,22 +1,35 @@
 # Simple Flags
 
-The aim of this module is to facilitate the capture and manulação of badeiras on the command line. There are several modules that provide a similar result, but I chose to write this to create a simpler architecture for the configuration data.
+Modified version of <https://github.com/PhilippeAssis/node-simple-flags>. To have better help 
+text and more options.
 
 ## Installation
-`npm install --save simple-args`
+`npm install --save @quality-edgar/simple-flags`
 
 ## Test
 In node_modules/simple-args, run: `npm run test`
 
 ## Features
 
-#### option.args
-Get the names of the arguments that are not pre-defined, ie its definition is from your order.
+#### option.name
+Program Name. Shows in help text
+
+#### option.description
+Program Description. Shows in help text
+
+#### option.helpHeader
+Header for auto generated help. 
+
+#### option.synopsis
+Synopsis auto generated help. An Array of strings containing sample commands.
+
+#### option.flags
+Flags to parse or generate help for.
 
 #### Booleans
 All Boolean object to be declared as an argument will have its inverted default value if true is false, is false is true.
 
-You can create aliases for an object. When the value is not pre defined, use `{objectName: ['a']}`, passing the alias in an array. When the value is definiod use `{alias: [ 'a', 'b'], value: "123"}`
+You can create aliases for an object. When the value is not pre defined, use `{objectName: ['a']}`, passing the alias in an array. When the value is definiod use `{alias: [ 'a', 'b'], default: "123"}`
 
 ### Description
 To describe the flags, just add **description**. When you run `--help` the full description of the schema will be displayed
@@ -41,21 +54,23 @@ You can force the display of the description of the flags using [execute](#execu
 You can execute functions directly when a flag is declared. If the function has a return other than `undefined` the value will be set for the parameter.
 
 ```javascript
-const params = flags({
-  print: {
-    execute(){
-      console.log(this.schema)
-    }
-  },
-  support: {
-    execute(){
-      this.help() // print description's
-    }
-  },
-  calc: {
-    execute(){
-      return 1 + 1 // params.calc === 2
-    }
+const params = flags({ 
+  flags : {
+      print: {
+        execute(){
+          console.log(this.schema)
+        }
+      },
+      support: {
+        execute(){
+          this.help() // print description's
+        }
+      },
+      calc: {
+        execute(){
+          return 1 + 1 // params.calc === 2
+        }
+      }
   }
 })
 ```
@@ -68,14 +83,31 @@ var flags = require('simple-flags')
 
 // Default options
 var options = {
-    "args": ["author", "website"],
-    "coffee": false,
-    "not": true,
-    "developer": null,
-    "country": {
-        aliases: ['c', 'country'],
-        default: "Do not be 'reaça'"
-    }
+  'helpHeader' : "Usage Guide : \n",
+  'args': ['author', 'website'],
+  'name' : 'Program Name',
+  'description' : 'Program Description',
+  'synopsis' : ["prog --coffee --not","prog --developer='Sundeep Narang'"],
+  'flags' : {
+    'coffee': {
+      default: false,
+      description: 'You have coffee?'
+    },
+    'not': {
+      default: true,
+      description: 'Boolean example'
+    },
+    'developer': {
+      aliases: ['dev', 'd'],
+      description: 'Developer name'
+    },
+    'country': {
+      aliases: ['c'],
+      default: 'Do not be \'reaça\'',
+      description: 'Your country'
+    },
+    'directFlag' : "test"
+  }
 }
 
 console.log(flags(options))
@@ -83,35 +115,42 @@ console.log(flags(options))
 
 ### Command
 ```shell
-node test.js 'Philippe Assis' ${HOME} --site www.philippeassis.com --github=https://github.com/PhilippeAssis -d --coffee -not -c 'Brazil=#foraTemer'
+node test.js 'Quality EDGAR' ${HOME} --site www.qualityedgarsolutions.com --github=https://github.com/qualityedgar -d --coffee -not -c 'USA=QES'
 ```
 
 ### Result
 ```javascript
 { coffee: true,
-  not: false,
-  developer: true,
-  country: 'Brazil=Fora Temer',
-  site: 'www.philippeassis.com',
-  github: 'https://github.com/PhilippeAssis',
-  author: 'Philippe Assis',
-  website: '/home/assis' }
+  not: true,
+  country: 'USA=QES',
+  directFlag: 'test',
+  site: 'www.qualityedgarsolutions.com',
+  github: 'https://github.com/qualityedgar',
+  author: 'Quality EDGAR',
+  website: '/Users/sundeepnarang',
+  developer: true }
   ```
 
-  ## Deprecation'
-  ### alias to aliases
-  The `alias` priority will be replaced for `aliases` in the future, necessarily passing an array
+  ## Other Props
+  ### aliases
+  
 
 ```javascript
 "country": {
     aliases: ['c', 'country']
 }
 ```
-### value to default
-The `value` priority will be replaced for `default` in the future
+### default
 
 ```javascript
 "country": {
     default: "#foraTemer"
+}
+```
+### hidden
+
+```javascript
+"hideFlagFromHelp": {
+    hidden: true
 }
 ```
