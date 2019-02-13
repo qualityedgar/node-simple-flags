@@ -1,6 +1,6 @@
 {
-  "name": "@quality-edgar/simple-flags",
-  "version": "2.0.0",
+  "name": "@qualityedgar/simple-flags",
+  "version": "2.0.1",
   "description": "Simple and practical module to generate and organize command line flags and display usage",
   "main": "lib/simpleFlags.js",
   "scripts": {
