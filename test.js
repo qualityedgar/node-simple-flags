@@ -1,10 +1,11 @@
-var flags = require('./lib/simpleFlags')
+var flags = require('./lib/simpleFlags');
 
 // Default options
 var options = {
   'helpHeader' : "Usage Guide : \n",
   'args': ['author', 'website'],
   'name' : 'Program Name',
+  'version' : 'Program Version String',
   'description' : 'Program Description',
   'synopsis' : ["prog --coffee --not","prog --developer='Sundeep Narang'"],
   'flags' : {

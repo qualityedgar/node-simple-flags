@@ -1,11 +1,12 @@
 {
   "name": "@qualityedgar/simple-flags",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Simple and practical module to generate and organize command line flags and display usage",
   "main": "lib/simpleFlags.js",
   "scripts": {
     "test": "node test.js 'Quality EDGAR' ${HOME} --site www.qualityedgarsolutions.com --github=https://github.com/qualityedgar -d --coffee -not -c 'USA=QES'",
-    "help": "node test.js -h"
+    "help": "node test.js -h",
+    "version": "node test.js -v"
   },
   "keywords": [
     "flags",
